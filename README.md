@@ -32,7 +32,7 @@ git clone https://github.com/LeonardoSnows/Encurtador-de-URL.git
 2. The API will be accessible at http://localhost:8080
 
 ## Database
-The project utilizes [MySql](https://www.mysql.com/)
+The project utilizes [MySql](https://www.mysql.com/) as the database. The necessary database migrations are managed using Flyway.
 
 ## API Endpoints
 The API provides the following endpoints:
@@ -44,7 +44,7 @@ POST /encurtar - this endpoint modify your long URL to short URL
 ```
 
 ## Authentication
-The API uses Spring Security for authentication control. as the database. The necessary database migrations are managed using Flyway.
+The API uses Spring Security for authentication control.
 
 ```
 {
