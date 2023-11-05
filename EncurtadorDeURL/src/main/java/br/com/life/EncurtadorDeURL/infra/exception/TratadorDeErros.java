@@ -10,9 +10,9 @@ import org.springframework.web.bind.annotation.RestControllerAdvice;
 public class TratadorDeErros {
 
     @ExceptionHandler(MethodArgumentNotValidException.class)
-    public ResponseEntity tratarErro403(MethodArgumentNotValidException method) {
+    public ResponseEntity tratarErro400(MethodArgumentNotValidException method) {
         var erros = method.getFieldErrors();
-        return ResponseEntity.status(403).body(erros.stream().map(DadosErroValidacao::new).toList());
+        return ResponseEntity.badRequest().body(erros.stream().map(DadosErroValidacao::new).toList());
     }
 
     private record DadosErroValidacao(String campo, String msg) {

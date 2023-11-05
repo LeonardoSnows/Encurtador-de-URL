@@ -10,3 +10,5 @@ api:
     token:
       secret: ${JWT_SECRET:12345678}
       issuer: ${API Voll.med:API Voll.med}
+
+BITLY_TOKEN: Sua chave vai aqui
