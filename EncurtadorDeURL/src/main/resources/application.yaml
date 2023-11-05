@@ -1,0 +1,12 @@
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost/logindb
+    username: lneves
+    password: LEonardo10#@
+
+api:
+  security:
+    token:
+      secret: ${JWT_SECRET:12345678}
+      issuer: ${API Voll.med:API Voll.med}
