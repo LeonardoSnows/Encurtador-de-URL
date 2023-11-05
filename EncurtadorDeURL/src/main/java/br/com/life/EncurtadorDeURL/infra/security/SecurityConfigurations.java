@@ -21,19 +21,15 @@ public class SecurityConfigurations {
     @Autowired
     private SecurityFilter securityFilter;
 
-    @Bean // server para expor o retorno do metodo
+    @Bean
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
-        /**
-         * desabilitar a protecao contra ataques CSRF(Cross-Site Request Forgery);
-         * token que vamos usar ja protege contra esse ataque
-         */
 
         try {
             return http.csrf().disable().sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS)
                     .and().authorizeHttpRequests()
-                    .requestMatchers(HttpMethod.POST, "/login").permitAll() //diz para o spring que o /login quando for utilizar o metodo POST, ele esta permitido
-                    .anyRequest().authenticated()// aqui ele libera apenas se o usuario estiver authenticado
-                    .and().addFilterBefore(securityFilter, UsernamePasswordAuthenticationFilter.class) // aqui diz para o Spring qual filtro tem que vir antes, ou seja , o nosso filtro tem que vir antes por conta que o Spring valida se o usuario esta logado ou nao
+                    .requestMatchers(HttpMethod.POST, "/login").permitAll()
+                    .anyRequest().authenticated()
+                    .and().addFilterBefore(securityFilter, UsernamePasswordAuthenticationFilter.class)
                     .build();
         } catch (Exception e) {
             throw new RuntimeException(e);

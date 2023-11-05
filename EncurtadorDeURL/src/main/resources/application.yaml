@@ -1,9 +1,9 @@
 spring:
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
-    url: jdbc:mysql://localhost/logindb
-    username: lneves
-    password: LEonardo10#@
+    url: jdbc:mysql://localhost/<your database>
+    username:
+    password:
 
 api:
   security:
@@ -11,4 +11,4 @@ api:
       secret: ${JWT_SECRET:12345678}
       issuer: ${API Voll.med:API Voll.med}
 
-BITLY_TOKEN: Sua chave vai aqui
+BITLY_TOKEN: Seu token vai aqui
