@@ -14,6 +14,7 @@ This project is an API built using **Java, Java Spring, Flyway Migrations, MySql
 - [Database](#database)
 - [API Endpoints](#api-endpoints)
 - [Authentication](#authentication)
+- [Bitly Token](#bitly-token)
 
 ## Installation
 1. Clone the repository:
@@ -54,3 +55,12 @@ The API uses Spring Security for authentication control.
 ```
 - To create a new user, just modify the migration V2 before the run application.
 - The password was crypt by using BCrypt
+
+## Bitly Token
+- You need to create an account to use this application in [Bitly](https://dev.bitly.com/)
+- Here are the documentation that I used to create this as well [Doc](https://github.com/opsmatters/bitly-java-api)
+- In the **application.yaml** are a property that you need to modify
+  
+```
+BITLY_TOKEN: Sua chave vai aqui (Here you put your bitly token)
+```
